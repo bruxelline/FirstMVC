@@ -1,0 +1,16 @@
+﻿@model FirstMVC2.Models.Reponse
+
+@{
+    ViewBag.Title = "Merci";
+}
+
+<h2>Merci</h2>
+
+@if (Model.presence == true)
+{
+    @:Coool ! Charaaal t'attends;
+}
+else
+{
+    @: Tanpis ! Rendez vous à la prochaine attaque;
+}

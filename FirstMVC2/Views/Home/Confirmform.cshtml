@@ -1,0 +1,38 @@
+﻿@model FirstMVC2.Models.Reponse
+
+@{
+    ViewBag.Title = "Confirmform";
+}
+
+<h2>Invitation Barbecue Outsider</h2>
+
+@using (Html.BeginForm())
+{
+    
+    <p>Pour tous ceux qui n'aime pas Twix&co ! Venez nous rejoindre à un gigantesque barbecue !</p><br/>
+    <p>Veuillez remplir le formulaire ci-dessous.</p>
+    <p>
+        Nom : @Html.TextBoxFor(x => x.Nom)
+    </p>
+   <p>
+       Prenom : @Html.TextBoxFor(x => x.Prenom)
+   </p>
+    <p>
+       Email : @Html.TextBoxFor(x => x.Email)
+   </p>
+    <p>
+       Téléphone : @Html.TextBoxFor(x => x.telephone)
+   </p>
+    
+    <p>
+       Peut-on compter sur vous ? 
+        @Html.DropDownListFor(x => x.presence, new[] {
+        new SelectListItem() {Text = "Oui, le carnivore sera là", Value = bool.TrueString},
+        new SelectListItem() {Text = "Non je suis végétarien", Value = bool.FalseString}
+   }, "Je préfère le chocolat")
+   </p>
+    
+    <input type="submit" value="Valider ma participation"/>
+}
+
+
